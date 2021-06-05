@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{title}
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='/js/jquery-3.2.1.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
+  body
+    nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
+      a(class='navbar-brand',href='#') Admin
+      button(class='navbar-toggler',type='button',data-toggle='collapse', data-target='#navbarColor01',aria-controls='navbarColor01',aria-expanded='false', aria-label='Toggle navigation')
+        span(class='navbar-toggler-icon')
+      div(class='collapse navbar-collapse',id='navbarColor01')
+        ul(class='navbar-nav mr-auto')
+          li(class='nav-item active')
+            a(class='nav-link',href='#') Home
+              span(class='sr-only') (current)
+          li(class='nav-item dropdown')
+            a(class='nav-link dropdown-toggle',data-toggle='dropdown',href='#',id='themes') Categories 
+              span(class='caret')
+            div(class='dropdown-menu' aria-labelledby='categories')
+              a(class='dropdown-item',href='#') Products
+          li(class='nav-item')
+            a(class='nav-link',href='#') Statistics
+        ul(class='nav navbar-nav navbar-right')
+          li(class='nav-item dropdown')
+            a(class='nav-link dropdown-toggle',href='#',id='cuenta',data-toggle='dropdown', aria-haspopup='true',aria-expanded='false') #{username}
+              span(class='caret')
+            div(class='dropdown-menu dropdown-menu-right',aria-labelledby='account')
+              a(class='dropdown-item',href='#') Change username
+              a(class='dropdown-item',href='#') Change password
+              div(class='dropdown-divider')
+              a(class='dropdown-item',href='/admin/logout') Logout
+
+    div(class='container-fluid',style='margin-top: 50px')
+      block content
+    div(class='main')
+    footer(class='footer')
+      div(class='container text-white')
+      br
+      p(class='text-center') Copyright &copy; Ismael Heredia 2021

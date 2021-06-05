@@ -1,0 +1,18 @@
+extends ../layouts/base
+
+block content
+
+    div(class='card card-primary login')
+      div(class='card-header bg-primary') Login
+      div(class='card-body')
+        div(class='card-block')
+          form(method='POST', action='/login')
+            .form-group
+              label Username:
+              input.form-control(name='username', type='text')
+            .form-group
+              label Password:
+              input.form-control(name='password', type='password')
+            div(class='text-center')
+              p(class='lead')
+                input.btn.btn-primary(type='submit',class='boton-largo',value='Login')
